@@ -1,0 +1,131 @@
+@use 'variables' as *;
+@use './light-theme';
+@use './dark-theme';
+
+html {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body{
+  background-color: $bgBody;
+}
+body * {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-feature-settings: 'calt'1, 'liga'1;
+  unicode-bidi: isolate;
+  text-rendering: optimizeLegibility;
+  direction: inherit;
+}
+.drop-shadow{
+  box-shadow: 0px 2px 2px 0px rgba(208, 210, 210, 0.25);
+}
+.basic-style{
+  background-color: $siteNavColor;
+  color:$textColor;
+}
+.text-site{
+    color:$textColor;
+}
+.btn-style{
+background-color: $btnBgColor;
+color:$btnTextColor;
+}
+.bg-body{
+background-color: $bgBody;
+}
+
+label{
+    font-size: $fs-sm;
+    color:$textGray;
+    font-weight: 300;
+}
+
+ .p-floatlabel-on:has(input:focus) label,.p-floatlabel:has(.p-inputwrapper-focus) label{
+  background-color: $bgBody !important;
+  color:$siteNavColor !important
+ }
+
+  .p-floatlabel-on:has(input:focus) label,.p-floatlabel label{
+  background-color: $bgBody !important;
+  color:$siteNavColor !important
+ }
+
+
+input {
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  height: 2rem;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: $fs-sm;
+  background-color: transparent !important;
+  border-color: $siteNavColor !important;
+  border-radius: 4px !important;
+  &::placeholder{
+       font-size: $fs-sm;
+       color:$textGray;
+  }
+}
+
+h6{
+  color:$siteNavColor;
+  margin-bottom: 0px;
+}
+
+
+
+button {
+  min-width: 50%;
+  width: 100%;
+  max-width: 50%;
+   &:hover{
+    background-color: $siteNavColor !important;
+    color:$iconColor !important;
+  }
+  @media (min-width: 1024px) {
+    min-width: 30%;
+          max-width: 30%;
+
+  }
+
+  @media (min-width: 1280px) {
+    min-width: 10%;
+      max-width: 10%;
+  }
+
+}
+.btn-main{
+  background-color: $btnBgColor;
+  color:$btnTextColor;
+  border-radius:4px;
+  border:none;
+
+}
+
+.btn-second{
+  background-color: transparent;
+  color:$siteNavColor;
+  border-radius:4px;
+  border:1px solid $siteNavColor;
+}
+
+html .toast-success {
+  background-color: #00857d !important;
+}
+html #toast-container.toast-top-right {
+  z-index: 999999999 !important;
+}
+
+  .p-datatable-filter-overlay *{
+font-size: $fs-xs !important;
+overflow: visible !important;
+.p-button{
+  flex-grow: 1;
+}
+.p-button-label {
+  padding:1rem;
+}
+}
+
+
