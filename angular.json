@@ -35,20 +35,21 @@
                 "glob": "**/*",
                 "input": "public"
               },
-                            "src/assets"
+              "src/assets"
             ],
             "styles": [
-                  {
-                    "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
-                    "bundleName": "bootstrap-ltr",
-                    "inject": false
-                  },
-                  {
-                    "input": "node_modules/bootstrap/dist/css/bootstrap.rtl.min.css",
-                    "bundleName": "bootstrap-rtl",
-                    "inject": false
-                  },
-                    "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              {
+                "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                "bundleName": "bootstrap-ltr",
+                "inject": false
+              },
+              {
+                "input": "node_modules/bootstrap/dist/css/bootstrap.rtl.min.css",
+                "bundleName": "bootstrap-rtl",
+                "inject": false
+              },
+                "node_modules/@ng-select/ng-select/themes/default.theme.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "src/assets/styles/styles.scss"
             ],
             "scripts": [

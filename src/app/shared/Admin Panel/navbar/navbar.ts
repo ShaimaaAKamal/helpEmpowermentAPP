@@ -1,8 +1,9 @@
 import { Component, inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { Shared } from '../Services/shared/shared';
-import { Theme } from '../Services/ThemeService/theme';
+import { Theme } from '../../Services/ThemeService/theme';
+import { Shared } from "../../Services/shared/shared"
+
 
 @Component({
   selector: 'app-navbar',

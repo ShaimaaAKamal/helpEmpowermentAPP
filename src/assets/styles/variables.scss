@@ -1,8 +1,6 @@
-$placeHolderColor: var(--placeHolderColor);
-$bgBody: var(--bgBody);
+
 $btnTextColor: var(--btnTextColor);
 $btnBgColor: var(--btnBgColor);
-$iconColor: var(--iconColor);
 $siteNavColor: var(--siteNavColor);
 $textColor: var(--textColor);
 $borderColor: var(--borderColor);
@@ -12,16 +10,24 @@ $sidebarBgColor:var(--sidebarBgColor);
 $bgCard:var(--bgCard);
 $bghover:var(--hoverColor);
 $textGray:var(--textGray);
-$fs-sm:.8rem;
 $fs-xs:.6rem;
 $fs-xl:4.5rem;
-$fs-l:1rem;
 $fs-md:2rem;
 $fs-md-2:1.5rem;
 $fs-md-3:3rem;
 
 
+$placeHolderColor: var(--placeHolderColor);
+$iconColor: var(--iconColor);
+$bgBody: var(--bgBody);
 $primaryColor:var(--primary-color);
 $secondaryColor:var(--secondary-color);
 $lightBgTextColor:var(--light-bg-text-color);
 $lightTextColor:var(--light-text-color);
+$labelColor:var(--label-color);
+$borderRadius:8px;
+$boxShadow:4 -4px 12px #000;
+$paragraphColor:var(--paragraph-color);
+$fs-sm:.8rem;
+$fs-l:1rem;
+

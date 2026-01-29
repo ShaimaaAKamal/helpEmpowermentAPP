@@ -13,8 +13,9 @@ import { SideNavItem } from './side-nav-item/side-nav-item';
 import { RouterLink } from '@angular/router';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
-import { Shared } from '../Services/shared/shared';
-import { Navitem } from '../../models/navitem';
+import { Navitem } from '../../../models/navitem';
+import { Shared } from '../../Services/shared/shared';
+
 
 @Component({
   selector: 'app-side-nav',

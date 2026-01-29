@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, inject, input, viewChild } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
-import { Navitem } from '../../../models/navitem';
-import { Shared } from '../../Services/shared/shared';
+import { Shared } from '../../../Services/shared/shared';
+import { Navitem } from '../../../../models/navitem';
 
 interface parentNavItem {
   isCollapsed: boolean;

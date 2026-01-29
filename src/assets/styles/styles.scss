@@ -27,87 +27,13 @@ body * {
 .text-site{
     color:$textColor;
 }
-.btn-style{
-background-color: $btnBgColor;
-color:$btnTextColor;
-}
 .bg-body{
 background-color: $bgBody;
-}
-
-label{
-    font-size: $fs-sm;
-    color:$textGray;
-    font-weight: 300;
-}
-
- .p-floatlabel-on:has(input:focus) label,.p-floatlabel:has(.p-inputwrapper-focus) label{
-  background-color: $bgBody !important;
-  color:$siteNavColor !important
- }
-
-  .p-floatlabel-on:has(input:focus) label,.p-floatlabel label{
-  background-color: $bgBody !important;
-  color:$siteNavColor !important
- }
-
-
-input {
-  width: 100%;
-  padding: 0.25rem 0.5rem;
-  height: 2rem;
-  font-family: inherit;
-  font-weight: 400;
-  font-size: $fs-sm;
-  background-color: transparent !important;
-  border-color: $siteNavColor !important;
-  border-radius: 4px !important;
-  &::placeholder{
-       font-size: $fs-sm;
-       color:$textGray;
-  }
 }
 
 h6{
   color:$siteNavColor;
   margin-bottom: 0px;
-}
-
-
-
-button {
-  min-width: 50%;
-  width: 100%;
-  max-width: 50%;
-   &:hover{
-    background-color: $siteNavColor !important;
-    color:$iconColor !important;
-  }
-  @media (min-width: 1024px) {
-    min-width: 30%;
-          max-width: 30%;
-
-  }
-
-  @media (min-width: 1280px) {
-    min-width: 10%;
-      max-width: 10%;
-  }
-
-}
-.btn-main{
-  background-color: $btnBgColor;
-  color:$btnTextColor;
-  border-radius:4px;
-  border:none;
-
-}
-
-.btn-second{
-  background-color: transparent;
-  color:$siteNavColor;
-  border-radius:4px;
-  border:1px solid $siteNavColor;
 }
 
 html .toast-success {
@@ -129,3 +55,39 @@ overflow: visible !important;
 }
 
 
+.form-control {
+  border-radius: 8px;
+  border:none;
+}
+.input-group-text {
+  background-color: var(--form-control-bg);
+  border:none
+  // border-start-start-radius: 8px;
+  // border-end-start-radius: 8px;
+}
+
+.input-group-text i {
+  color: var(--bs-placeholder-color) !important;
+}
+
+.validationError {
+  color: var(--bs-form-invalid-color);
+  font-size: 0.875em;
+}
+.validBorderError {
+  border: 1px solid var(--bs-form-invalid-color);
+  border-radius: 8px;
+}
+.ng-select{
+ padding:0px;
+}
+
+.ng-select.ng-select-focused:not(.ng-select-opened) >.ng-select-container{
+  border-color: $primaryColor;
+  box-shadow: none;
+}
+label{
+  // font-size:$fs-sm;
+  font-weight: normal;
+  color:$labelColor;
+}

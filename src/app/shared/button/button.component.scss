@@ -1,0 +1,14 @@
+@use 'variables' as *;
+.btn-main{
+  background-color: $primaryColor !important;
+  border:none;
+  color:$lightBgTextColor;
+  font-size: $fs-sm;
+  &:hover{
+      background-color: $secondaryColor !important;
+  }
+}
+
+.btn-outline-main{
+  border-color: $primaryColor;
+}

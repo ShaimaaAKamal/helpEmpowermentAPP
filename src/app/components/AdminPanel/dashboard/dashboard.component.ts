@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { CertificationQuestionComponent } from '../certification-question/certification-question.component';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [],
+  imports: [CertificationQuestionComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
