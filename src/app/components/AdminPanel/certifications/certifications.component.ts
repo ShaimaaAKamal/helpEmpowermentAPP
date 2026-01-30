@@ -5,11 +5,13 @@ import { CertificationsStore } from '../../../AdminPanelStores/CertificationStor
 import { Certification } from '../../../models/certification';
 import { CreateNewCertificationComponent } from '../create-new-certification/create-new-certification.component';
 import { CertificationComponent } from '../certification/certification.component';
+import { CertificationQuestionComponent } from '../certification-question/certification-question.component';
 
 @Component({
   selector: 'app-certifications',
   imports: [ButtonComponent, CertificationCardComponent,
-    CreateNewCertificationComponent, CertificationComponent],
+    CreateNewCertificationComponent, CertificationComponent,
+    CertificationQuestionComponent],
   templateUrl: './certifications.component.html',
   styleUrl: './certifications.component.scss',
   providers: [CertificationsStore]
@@ -19,6 +21,8 @@ export class CertificationsComponent {
   certifications = computed(() => this.store.certifications());
   hidden = signal<boolean>(false);
   showCertification = signal<boolean>(true);
+  showCreateQuestion = signal<boolean>(true);
+
   oid: string = '';
 
   onAddNewCertification() {

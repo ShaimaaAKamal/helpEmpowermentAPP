@@ -1,25 +1,63 @@
-  <!-- <div class="d-flex flex-column p-3 shadow rounded-3 fw-bold">
-    <h5>Certification Info</h5>
-    <div class="row gx-2">
-      <div class="col-6">
-        <spk-ng-select
-          formControlName="certification"
-          label="Certification"
-          [options]="certificationOptions"
-          [multiple]="false"
-          placeholder="Choose Certification"
-          selectClass="form-control w-100"
-        />
-      </div>
-      <div class="col-6">
-        <spk-ng-select
-          formControlName="questionType"
-          label="Question Type"
-          [options]="questionTypes"
-          [multiple]="false"
-          placeholder="Choose Question Type"
-          selectClass="form-control w-100"
-        />
+<div class="container-fluid">
+  <div class="row g-3">
+    <div class="col-12">
+      <div class="d-flex flex-column p-3 shadow rounded-3 fw-bold">
+        <h5>Certification Info</h5>
+        <div class="row gx-2">
+          <div class="col-lg-4">
+            <spk-ng-select
+              formControlName="certification"
+              label="Certification"
+              [options]="certificationOptions"
+              [multiple]="false"
+              placeholder="Choose Certification"
+              selectClass="form-control w-100"
+            />
+          </div>
+          <div class="col-lg-4">
+            <spk-ng-select
+              formControlName="examNo"
+              label="Exam No."
+              [options]="examNo"
+              [multiple]="false"
+              placeholder="Choose Exam Number"
+              selectClass="form-control w-100"
+            />
+          </div>
+          <div class="col-lg-4">
+            <spk-ng-select
+              formControlName="questionType"
+              label="Question Type"
+              [options]="questionTypes"
+              [multiple]="false"
+              placeholder="Choose Question Type"
+              selectClass="form-control w-100"
+            />
+          </div>
+        </div>
       </div>
     </div>
-  </div> -->
+
+    <div class="col-12">
+      <div class="d-flex flex-column p-3 shadow rounded-3 fw-bold">
+        <h5>Question Details</h5>
+        <div class="row gx-2">
+          <div class="col-12">
+            <app-input
+              formControlName="courseCode"
+              label="Course Code"
+              type="text"
+              placeholder=""
+              icon=""
+              [errorMessages]="{
+                required: 'Code is required',
+                minlength: 'Code is too short',
+                maxlength: `Code can't exceed 20 charahcter`,
+              }"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
