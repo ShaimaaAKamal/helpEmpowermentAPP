@@ -46,7 +46,7 @@ export const CertificationsStore = signalStore(
       }
 
       const pagination: Pagination = {
-        getAll: false,
+        getAll: true,
         pageNumber: page() - 1,
         pageSize: pageSize(),
       };

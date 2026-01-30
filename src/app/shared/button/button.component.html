@@ -2,7 +2,8 @@
 [type]="buttonType()"
 class="btn rounded-2"
 [class.btn-main]="mainBtn()"
-[class.btn-outline-main]="!mainBtn()"
+[class.btn-second]="secondaryBtn() && !mainBtn()"
+[class.btn-outline-main]="!mainBtn() && !secondaryBtn()"
 [disabled]="disabled()">
 {{btnLabel()}}
 </button>

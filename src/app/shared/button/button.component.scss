@@ -1,14 +1,30 @@
-@use 'variables' as *;
-.btn-main{
+@use "variables" as *;
+.btn-main {
   background-color: $primaryColor !important;
-  border:none;
-  color:$lightBgTextColor;
+  border: none;
+  color: $lightBgTextColor;
   font-size: $fs-sm;
-  &:hover{
-      background-color: $secondaryColor !important;
+  &:hover {
+    background-color: $secondaryColor !important;
   }
 }
 
-.btn-outline-main{
+.btn-outline-main {
   border-color: $primaryColor;
+  font-size: $fs-sm;
+  color:$primaryColor !important;
+  &:hover {
+    background-color: $secondaryColor !important;
+    color: $lightBgTextColor !important;
+  }
+}
+
+.btn-second {
+  background-color: #233043 !important;
+  border: none;
+  color: $lightBgTextColor;
+  font-size: $fs-sm;
+  &:hover {
+    background-color: $secondaryColor !important;
+  }
 }

@@ -58,12 +58,22 @@ overflow: visible !important;
 .form-control {
   border-radius: 8px;
   border:none;
+  border:1px solid $borderColor;
+  outline :none !important;
+  box-shadow: none !important;
+
+  &:focus{
+    border-color:$primaryColor;
+  }
+}
+.ng-select .ng-select-container{
+  border:1px solid $borderColor;
 }
 .input-group-text {
   background-color: var(--form-control-bg);
-  border:none
-  // border-start-start-radius: 8px;
-  // border-end-start-radius: 8px;
+  border:none;
+   outline :none !important;
+  box-shadow: none !important;
 }
 
 .input-group-text i {
@@ -75,19 +85,47 @@ overflow: visible !important;
   font-size: 0.875em;
 }
 .validBorderError {
-  border: 1px solid var(--bs-form-invalid-color);
+  border-color: var(--bs-form-invalid-color);
   border-radius: 8px;
 }
+
 .ng-select{
  padding:0px;
+ border:none;
 }
 
 .ng-select.ng-select-focused:not(.ng-select-opened) >.ng-select-container{
-  border-color: $primaryColor;
+  border:1px solid $primaryColor;
   box-shadow: none;
 }
+
+.ng-input input:focus{
+    border-color:$primaryColor;
+}
+
+.validBorderError.ng-select .ng-select-container{
+  border:1px solid  var(--bs-form-invalid-color);
+}
+
+
 label{
-  // font-size:$fs-sm;
   font-weight: normal;
   color:$labelColor;
+}
+
+.filepond--panel-root {
+  background-color: $bgBody;
+  border: 1px solid $borderColor;
+}
+
+.filepond--drop-label {
+  color: $secondaryColor;
+}
+
+.filepond--root {
+  margin-bottom: 0;
+}
+
+.filepond--credits {
+  display: none !important;
 }

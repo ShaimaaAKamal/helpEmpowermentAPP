@@ -11,5 +11,6 @@ export class ButtonComponent {
   buttonType = input<string>('button');
   disabled = input<boolean>(false);
   mainBtn = input<boolean>(true);
+  secondaryBtn = input<boolean>(true);
 
 }

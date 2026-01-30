@@ -28,6 +28,8 @@
     "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",
     "express": "^4.18.2",
+    "filepond": "^4.32.11",
+    "ngx-filepond": "^7.0.3",
     "ngx-toastr": "^18.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

@@ -2,16 +2,6 @@
   <div class="col-12">
     <div class="card custom-card mb-0">
       <div class="card-body">
-        <!-- <file-pond
-          #myPond
-          [options]="pondOptions"
-          class="multiple-filepond"
-          [files]="pondFiles"
-          (oninit)="pondHandleInit()"
-          (onaddfile)="pondHandleAddFile($event)"
-          (onremovefile)="pondHandleRemoveFile($event)"
-        >
-        </file-pond> -->
         <file-pond
           #myPond
           [options]="pondOptions"
@@ -37,10 +27,6 @@
             [mainBtn]="false"
             (click)="clearFiles()"
           />
-          <!-- <app-button
-            btnLabel="Upload All"
-            (click)="uploadAll()"
-          /> -->
         </div>
         }
       </div>
