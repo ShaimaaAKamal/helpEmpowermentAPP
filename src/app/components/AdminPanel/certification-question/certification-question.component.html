@@ -105,7 +105,7 @@
                 selectClass="form-control w-100"
               />
             </div>
-            @if(addAnswersFlag()) {
+            @if (addAnswersFlag()) {
               <div class="col-12">
                 <div
                   class="addAnswer d-flex align-items-center justify-content-end"
@@ -121,6 +121,62 @@
       </div>
       @if (!addAnswersFlag()) {
         <div class="col-12">
+          <div class="d-flex flex-column p-3 shadow rounded-3 fw-bold">
+            <h5>Answers</h5>
+
+            <div formArrayName="answers" class="row g-3">
+              @for(group of answersArray.controls; let i = $index;track i){
+                  <div
+                class="col-12"
+                [formGroupName]="i"
+              >
+                <div class="d-flex align-items-start gap-2">
+                  <app-checkbox
+                    formControlName="answers"
+                    [options]="checkboxOptions"
+                    label=""
+                  ></app-checkbox>
+
+                  <app-input
+                    class="w-100"
+                    formControlName="answer"
+                    label=""
+                    type="text"
+                    placeholder="Answer"
+                    icon=""
+                    [errorMessages]="{
+                      required: 'Answer is required',
+                      minlength: 'Answer is too short',
+                      maxlength: `Answer can't exceed 20 characters`,
+                    }"
+                  ></app-input>
+
+                  <!-- Optional remove button -->
+                  @if (answersArray.length > 1) {
+                    <i
+                      class="bi bi-x-circle-fill text-danger mt-2"
+                      (click)="removeAnswer(i)"
+                      style="cursor: pointer"
+                    ></i>
+                  }
+                </div>
+              </div>
+              }
+
+            </div>
+
+            <!-- Add button -->
+            <div
+              class="addAnswer d-flex align-items-center justify-content-end mt-2"
+              (click)="onAddAnotherAnswerSection()"
+              style="cursor: pointer"
+            >
+              <i class="bi bi-plus-circle-fill pe-2"></i>
+              <span>Add Another Answer</span>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-12">
           <div class="d-flex flex-column p-3 shadow rounded-3 fw-bold">
             <h5>Answers</h5>
             <div class="row g-3 flex-wrap">
@@ -160,7 +216,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       }
       <div class="d-flex justify-content-end gap-2">
         <app-button btnLabel="Cancel" [mainBtn]="false" (click)="cancel()" />

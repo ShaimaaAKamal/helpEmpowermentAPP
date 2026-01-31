@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { SpkNgSelectComponent } from '../../../shared/spk-ng-select/spk-ng-select.component';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ButtonComponent } from '../../../shared/button/button.component';
 import { InputComponent } from '../../../shared/input/input.component';
 import { FileUploadComponent } from '../../../shared/file-upload/file-upload.component';
@@ -67,21 +67,42 @@ export class CertificationQuestionComponent {
     questionOrder: ['', Validators.required],
     questionMark: [0, Validators.required],
     files: [[] as File[]],
-    answer: ['', Validators.required],
-    answers: ['', Validators.required],
+    // answer: ['', Validators.required],
+    answers: this.fb.array([this.createAnswerGroup()]),
   });
 
+  // 🔹 One row structure
+  createAnswerGroup(): FormGroup {
+    return this.fb.group({
+      answers: [[]],
+      answer: [
+        '',
+        [Validators.required, Validators.minLength(2), Validators.maxLength(20)],
+      ],
+    });
+  }
+
+  get answersArray(): FormArray {
+    return this.form.get('answers') as FormArray;
+  }
+
+  onAddAnotherAnswerSection(): void {
+    // send api calls
+    this.answersArray.push(this.createAnswerGroup());
+  }
+
+  removeAnswer(index: number): void {
+    this.answersArray.removeAt(index);
+  }
   onAddNewCertification(){
 
   }
   onActivateAddAnswerSection(){
     this.addAnswersFlag.set(false);
   }
-  onAddAnotherAnswerSection(){}
   cancel(){}
   onSubmit(){}
 }
-function sognal<T>(arg0: boolean) {
-  throw new Error('Function not implemented.');
-}
+
+
 
