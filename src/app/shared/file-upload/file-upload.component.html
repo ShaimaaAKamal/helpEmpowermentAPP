@@ -11,13 +11,13 @@
           (onremovefile)="pondHandleRemoveFile()"
         >
         </file-pond>
-
+<!-- 
         @if (getFiles().length > 0){
-        <div class="mt-3">
+        <div class="mt-1">
           <h5>Selected files ({{ getFiles().length }}):</h5>
-          <ul>
+          <ul class="mb-1">
             @for(file of getFiles() ; track file){
-            <li>{{ file.filename }} ({{ file.fileSize | number }} bytes)</li>
+            <li class="mb-1">{{ file.filename }} ({{ file.fileSize | number }} bytes)</li>
             }
           </ul>
         </div>
@@ -28,7 +28,7 @@
             (click)="clearFiles()"
           />
         </div>
-        }
+        } -->
       </div>
     </div>
   </div>

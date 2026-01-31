@@ -16,7 +16,7 @@
                 [options]="certificationOptions"
                 [multiple]="false"
                 placeholder="Choose Certification"
-                selectClass="form-control w-100"
+                selectClass="form-control  w-100"
               />
             </div>
             <div class="col-lg-3">
@@ -56,8 +56,8 @@
       <div class="col-12">
         <div class="d-flex flex-column p-3 shadow rounded-3 fw-bold">
           <h5>Question Details</h5>
-          <div class="row g-3 flex-wrap">
-            <div class="col-12">
+          <div class="row g-2 flex-wrap">
+            <div class="col-12 col-lg-8">
               <app-input
                 formControlName="questionHeader"
                 label="Question Header"
@@ -71,17 +71,7 @@
                 }"
               />
             </div>
-            <div class="col-12">
-              <div class="upload">
-                <label for="">attachments</label>
-                <app-file-upload
-                  formControlName="files"
-                  [multiple]="false"
-                  label="Upload files"
-                ></app-file-upload>
-              </div>
-            </div>
-            <div class="col-12 col-md-6">
+             <div class="col-12 col-md-6 col-lg-2">
               <app-input
                 formControlName="questionOrder"
                 label="Question Order"
@@ -95,16 +85,27 @@
                 }"
               />
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 col-lg-2">
               <spk-ng-select
                 formControlName="questionMark"
                 label="Question Mark"
                 [options]="questionMarks"
                 [multiple]="false"
                 placeholder="Choose Question Mark"
-                selectClass="form-control w-100"
+                selectClass="form-control form-control-sm w-100"
               />
             </div>
+            <div class="col-12">
+              <div class="upload">
+                <label for="">attachments</label>
+                <app-file-upload
+                  formControlName="files"
+                  [multiple]="false"
+                  label="Upload files"
+                ></app-file-upload>
+              </div>
+            </div>
+
             @if (addAnswersFlag()) {
               <div class="col-12">
                 <div

@@ -111,21 +111,7 @@ overflow: visible !important;
 label{
   font-weight: normal;
   color:$labelColor;
+  font-size: $fs-sm;
 }
 
-.filepond--panel-root {
-  background-color: $bgBody;
-  border: 1px solid $borderColor;
-}
 
-.filepond--drop-label {
-  color: $secondaryColor;
-}
-
-.filepond--root {
-  margin-bottom: 0;
-}
-
-.filepond--credits {
-  display: none !important;
-}

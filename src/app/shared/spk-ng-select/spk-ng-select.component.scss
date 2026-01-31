@@ -1,7 +1,46 @@
-::ng-deep .ng-select{
-  border-radius: 8px !important;
+
+:host {
+  --sm-height: 31px;
+  --sm-font: 0.875rem;
 }
-::ng-deep .ng-select.form-control .ng-select-container,
-::ng-deep .ng-select.form-control.ng-select-single .ng-select-container {
-  height: calc(1.6rem + 2px) !important;
+
+:host ::ng-deep .ng-select {
+  min-height: var(--sm-height);
+  font-size: var(--sm-font);
+}
+
+:host ::ng-deep .ng-select .ng-select-container {
+  height: var(--sm-height);
+  min-height: var(--sm-height);
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+:host ::ng-deep .ng-select .ng-value-container {
+  display: flex;
+  align-items: center;   /* ⭐ */
+  padding: 0 !important;
+}
+
+/* value + placeholder */
+:host ::ng-deep .ng-select .ng-value,
+:host ::ng-deep .ng-select .ng-placeholder {
+  display: flex;
+  align-items: center;
+  line-height: normal;
+}
+
+:host ::ng-deep .ng-select .ng-input {
+  display: flex;
+  align-items: center;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+:host ::ng-deep .ng-select .ng-arrow-wrapper,
+:host ::ng-deep .ng-select .ng-clear-wrapper {
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
