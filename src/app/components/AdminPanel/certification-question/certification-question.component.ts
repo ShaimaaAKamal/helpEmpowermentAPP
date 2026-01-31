@@ -1,11 +1,15 @@
 import { Component, inject } from '@angular/core';
 import { SpkNgSelectComponent } from '../../../shared/spk-ng-select/spk-ng-select.component';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ButtonComponent } from '../../../shared/button/button.component';
+import { InputComponent } from '../../../shared/input/input.component';
+import { FileUploadComponent } from '../../../shared/file-upload/file-upload.component';
+import { CheckboxComponent, CheckboxOption } from '../../../shared/checkbox/checkbox.component';
 
 @Component({
   selector: 'app-certification-question',
-  imports: [SpkNgSelectComponent, ButtonComponent],
+  imports: [SpkNgSelectComponent, ButtonComponent, InputComponent,
+    FileUploadComponent, ReactiveFormsModule, CheckboxComponent],
   templateUrl: './certification-question.component.html',
   styleUrl: './certification-question.component.scss'
 })
@@ -32,13 +36,46 @@ export class CertificationQuestionComponent {
     { label: "8", value: 8 },
     { label: "9", value: 9 },
   ];
+
+  questionMarks = [
+    { label: "1", value: 1 },
+    { label: "2", value: 2 },
+    { label: "3", value: 3 },
+    { label: "4", value: 4 },
+    { label: "5", value: 5 },
+    { label: "6", value: 6 },
+    { label: "7", value: 7 },
+    { label: "8", value: 8 },
+    { label: "9", value: 9 },
+  ];
+
+  examModes=[
+    {label:"Practice Mode",value:"practice"},
+    {label :"Exam Mode",value:"exam"}
+  ]
+  checkboxOptions: CheckboxOption []=[
+    {label:"" , value:"true"}
+  ]
   fb = inject(FormBuilder);
   form = this.fb.group({
     certification: ['', Validators.required],
+    examNo: ['', Validators.required],
+    examMode: ['', Validators.required],
     questionType: [0, Validators.required],
+    questionHeader: ['', Validators.required],
+    questionOrder: ['', Validators.required],
+    questionMark: [0, Validators.required],
+    files: [[] as File[]],
+    answer: ['', Validators.required],
+    answers: ['', Validators.required],
+
+
   });
 
   onAddNewCertification(){
 
   }
+  onActivateAddAnswerSection(){}
+  cancel(){}
+  onSubmit(){}
 }
