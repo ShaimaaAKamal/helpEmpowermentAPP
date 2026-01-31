@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { SpkNgSelectComponent } from '../../../shared/spk-ng-select/spk-ng-select.component';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ButtonComponent } from '../../../shared/button/button.component';
@@ -14,6 +14,7 @@ import { CheckboxComponent, CheckboxOption } from '../../../shared/checkbox/chec
   styleUrl: './certification-question.component.scss'
 })
 export class CertificationQuestionComponent {
+  addAnswersFlag=signal<boolean>(true);
   certificationOptions =  [
     { label: "PMP", value: "PMP" },
     { label: "CAMP", value: "CAMP" }
@@ -68,14 +69,19 @@ export class CertificationQuestionComponent {
     files: [[] as File[]],
     answer: ['', Validators.required],
     answers: ['', Validators.required],
-
-
   });
 
   onAddNewCertification(){
 
   }
-  onActivateAddAnswerSection(){}
+  onActivateAddAnswerSection(){
+    this.addAnswersFlag.set(false);
+  }
+  onAddAnotherAnswerSection(){}
   cancel(){}
   onSubmit(){}
 }
+function sognal<T>(arg0: boolean) {
+  throw new Error('Function not implemented.');
+}
+

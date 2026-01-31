@@ -105,59 +105,63 @@
                 selectClass="form-control w-100"
               />
             </div>
-            <div class="col-12">
-              <div
-                class="addAnswer d-flex align-items-center justify-content-end"
-                (click)="onActivateAddAnswerSection()"
-              >
-                <i class="bi bi-plus-circle-fill pe-2"></i>
-                <span>Add Answers</span>
+            @if(addAnswersFlag()) {
+              <div class="col-12">
+                <div
+                  class="addAnswer d-flex align-items-center justify-content-end"
+                  (click)="onActivateAddAnswerSection()"
+                >
+                  <i class="bi bi-plus-circle-fill pe-2"></i>
+                  <span>Add Answers</span>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+      @if (!addAnswersFlag()) {
+        <div class="col-12">
+          <div class="d-flex flex-column p-3 shadow rounded-3 fw-bold">
+            <h5>Answers</h5>
+            <div class="row g-3 flex-wrap">
+              <div class="col-12">
+                <div class="d-flex align-items-start">
+                  <div class="d-flex align-items-start justify-content-center">
+                    <app-checkbox
+                      formControlName="answers"
+                      [options]="checkboxOptions"
+                      label=""
+                    ></app-checkbox>
+                  </div>
+
+                  <app-input
+                    class="w-100"
+                    formControlName="answer"
+                    label=""
+                    type="text"
+                    placeholder=""
+                    icon=""
+                    [errorMessages]="{
+                      required: ' Answer is required',
+                      minlength: 'Answer is too short',
+                      maxlength: `Answer can't exceed 20 charahcter`,
+                    }"
+                  />
+                </div>
+              </div>
+              <div class="col-12">
+                <div
+                  class="addAnswer d-flex align-items-center justify-content-end"
+                  (click)="onAddAnotherAnswerSection()"
+                >
+                  <i class="bi bi-plus-circle-fill pe-2"></i>
+                  <span>Add Another Answers</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="col-12">
-        <div class="d-flex flex-column p-3 shadow rounded-3 fw-bold">
-          <h5>Answers</h5>
-          <div class="row g-3 flex-wrap">
-            <div class="col-12">
-              <div class="d-flex align-items-center">
-                <app-checkbox
-                class="bg-danger"
-                  formControlName="answers"
-                  [options]="checkboxOptions"
-                  label=""
-                ></app-checkbox>
-                <app-input
-                  class="w-100"
-                  formControlName="answer"
-                  label=""
-                  type="text"
-                  placeholder=""
-                  icon=""
-                  [errorMessages]="{
-                    required: ' Answer is required',
-                    minlength: 'Answer is too short',
-                    maxlength: `Answer can't exceed 20 charahcter`,
-                  }"
-                />
-              </div>
-            </div>
-            <div class="col-12">
-              <div
-                class="addAnswer d-flex align-items-center justify-content-end"
-                (click)="onActivateAddAnswerSection()"
-              >
-                <i class="bi bi-plus-circle-fill pe-2"></i>
-                <span>Add Another Answers</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      }
       <div class="d-flex justify-content-end gap-2">
         <app-button btnLabel="Cancel" [mainBtn]="false" (click)="cancel()" />
         <app-button btnLabel="Done" buttonType="submit" />
