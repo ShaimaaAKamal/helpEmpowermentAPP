@@ -7,6 +7,10 @@ h5{
 }
 
 
-.addAnswer *{
+.addAnswer *,.doneQuestion *{
 color:$primaryColor;
+}
+
+.addQuestion *{
+ color:$darkColor;
 }

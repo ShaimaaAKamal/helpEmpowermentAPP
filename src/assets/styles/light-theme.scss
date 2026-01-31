@@ -1,25 +1,27 @@
 :root .light-theme {
-  --primary-color:#AD1457;
-  --secondary-color:#EC407A;
-  --border-color:rgb(217, 217, 217);
---light-bg-text-color:#fff;
---light-text-colo:#233043;
---label-color:#797979;
---paragraph-color:#6D8493;
+  --primary-color: #ad1457;
+  --secondary-color: #ec407a;
+  --border-color: rgb(217, 217, 217);
+  --dark-color: 233043;
+  --light-bg-text-color: #fff;
+  --light-text-colo: #233043;
+  --label-color: #797979;
+  --paragraph-color: #6d8493;
   --placeHolderColor: #797979;
-  --bgBody: #F9FAFB;
+  --bgBody: #f9fafb;
+
   --btnTextColor: #fff;
-  --btnBgColor: #AD1457;
+  --btnBgColor: #ad1457;
   // --iconColor: #F7FDF9;
-    --iconColor: #F7FDF9;
-  --iconCircleTextColor: #AD1457;
-  --sidebarBgColor: #AD1457;
-  --siteNavColor: #AD1457;
-  --textColor: #F7FDF9;
-  --borderColor: #F7FDF9;
-  --iconColorLight: #AD1457;
+  --iconColor: #f7fdf9;
+  --iconCircleTextColor: #ad1457;
+  --sidebarBgColor: #ad1457;
+  --siteNavColor: #ad1457;
+  --textColor: #f7fdf9;
+  --borderColor: #f7fdf9;
+  --iconColorLight: #ad1457;
   --bgCard: #fff;
-  --hoverColor:#fff;
-  --textGray:#9C9C9C;
+  --hoverColor: #fff;
+  --textGray: #9c9c9c;
   // --bgSubDepartment: #fff;
 }

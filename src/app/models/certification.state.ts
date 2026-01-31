@@ -1,5 +1,3 @@
-// src\app\management\user\models\user-state.ts
-
 import { Certification } from "./certification";
 
 export interface certificationState {
