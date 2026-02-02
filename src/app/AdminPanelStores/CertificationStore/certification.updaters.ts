@@ -100,3 +100,15 @@ export const setSortUpdater = (active: string, direction: 'asc' | 'desc' | ''): 
     page: 1,
   });
 }
+
+export const setSuccess = (success: boolean): PartialStateUpdater<certificationState> => {
+  return (state) => ({
+    success: success,
+  });
+};
+
+export const setOperation = (operation: string): PartialStateUpdater<certificationState> => {
+  return (state) => ({
+    operationType: operation,
+  });
+};

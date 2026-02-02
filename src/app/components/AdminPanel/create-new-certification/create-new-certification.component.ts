@@ -6,53 +6,46 @@ import { ButtonComponent } from '../../../shared/button/button.component';
 import { InputComponent } from '../../../shared/input/input.component';
 import { Certification } from '../../../models/certification';
 import { FileUploadComponent } from '../../../shared/file-upload/file-upload.component';
+import { CertificationService } from '../../../Services/certification.service';
+import { AsyncPipe, JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-create-certification',
   imports: [SpkNgSelectComponent, ReactiveFormsModule, ButtonComponent,
-   InputComponent, FileUploadComponent],
+    InputComponent, FileUploadComponent, AsyncPipe ,JsonPipe],
   templateUrl: './create-new-certification.component.html',
   styleUrl: './create-new-certification.component.scss'
 })
 export class CreateNewCertificationComponent {
+  private certificationService=inject(CertificationService);
   fb = inject(FormBuilder);
   store = inject(CertificationsStore);
   id: string = '';
 
-  courseLevels = [
-    { label: 'Beginner', value: 'BEGINNER' },
-    { label: 'Intermediate', value: 'INTERMEDIATE' },
-    { label: 'Advanced', value: 'ADVANCED' },
-    { label: 'Professional', value: 'PROFESSIONAL' }
-  ];
+  courseLevels$ = this.certificationService.getCourseLevels();
 
 
-  courseCategories = [
-    { label: 'Web Development', value: 'WEB_DEV' },
-    { label: 'Mobile Development', value: 'MOBILE_DEV' },
-    { label: 'Backend Development', value: 'BACKEND_DEV' },
-    { label: 'Frontend Development', value: 'FRONTEND_DEV' },
-    { label: 'UI / UX Design', value: 'UI_UX' },
-    { label: 'Data Science', value: 'DATA_SCIENCE' },
-    { label: 'Artificial Intelligence', value: 'AI' },
-    { label: 'Cyber Security', value: 'CYBER_SECURITY' }
-  ];
+  courseCategories$ = this.certificationService.getCourseCategories();
 
   users = [
-    { label: 'Ahmed Ali', value: 'ADMIN' },
-    { label: 'Mohamed Ahmed', value: 'INSTRUCTOR' },
-    { label: 'Shaimaa Kamal', value: 'STUDENT' },
-    { label: 'Reem Mohamed', value: 'GUEST' }
+    { label: 'Ahmed Ali', value: '3fa85f64-5717-4562-b3fc-2c963f66afa6' },
+  ];
+
+  status = [
+    { label: 'Active', value: true },
+    { label: 'Inactive', value: false },
+
   ];
 
   form = this.fb.group({
-    courseCode: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]],
-    courseName: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]],
+    courseCode: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(20)]],
+    courseName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(20)]],
     courseDescription: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]],
     courseLevelLookupId: ['', [Validators.required]],
     courseCategoryLookupId: ['', [Validators.required]],
     createdBy: ['', [Validators.required]],
-    files: [[] as File[]]
+    isActive: [true, [Validators.required]],
+    // files: [[] as File[]]
   });
 
   oid = input<string>('');
@@ -82,14 +75,23 @@ export class CreateNewCertificationComponent {
         });
       }
     });
+
+    effect(() => {
+      const success = this.store.success();
+      if (success)
+        this.cancel();
+      this.store.setSuccess(false);
+    });
   }
+
+
 
   onSubmit() {
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;
     }
-    console.log(this.form.value.files); // File[]
+    // console.log(this.form.value.files); // File[]
 
     if (this.form.valid && !this.oid()) {
       this.createCertification();

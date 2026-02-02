@@ -24,8 +24,9 @@
     [maxSelectedItems]="maxSelectedItems()"
     appendTo="body"
     (blur)="onTouched()"
-    [virtualScroll]="options().length > 150"
-  >
+ >
+      [virtualScroll]="options()!.length > 150"
+
     <ng-content></ng-content>
   </ng-select>
 

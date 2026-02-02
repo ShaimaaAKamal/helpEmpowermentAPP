@@ -5,7 +5,8 @@ export const initialCertificationState: certificationState = {
   selectedCertification: null,
   loading: false,
   error: null,
-
+  success:false,
+  operationType:"",
   page: 1,
   pageSize: 10,
   total: 0,

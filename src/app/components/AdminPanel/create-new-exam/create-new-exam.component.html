@@ -4,17 +4,16 @@
   class="d-flex flex-column gap-4 p-3"
 >
   <div class="row flex-wrap g-2">
-    <div class="col-lg-4">
+ <div class="col-lg-4">
       <app-input
-        formControlName="courseCode"
-        label="Course Code"
+        formControlName="courseOid"
+        label="Course Id"
         type="text"
         placeholder=""
         icon=""
+        [readOnly]="true"
         [errorMessages]="{
-          required: 'Code is required',
-          minlength: 'Code is too short',
-          maxlength: `Code can't exceed 20 charahcter`,
+          required: 'Course Id is required',
         }"
       />
     </div>
@@ -25,24 +24,9 @@
         type="text"
         placeholder=""
         icon=""
+        [readOnly]="true"
         [errorMessages]="{
-          required: 'Name is required',
-          minlength: 'Name is too short',
-          maxlength: `Name can't exceed 20 charahcter`,
-        }"
-      />
-    </div>
-    <div class="col-lg-4">
-      <app-input
-        formControlName="courseDescription"
-        label="Course Description"
-        type="text"
-        placeholder=""
-        icon=""
-        [errorMessages]="{
-          required: 'Description is required',
-          minlength: 'Description is too short',
-          maxlength: `Description can't exceed 20 charahcter`,
+          required: 'Course Name is required',
         }"
       />
     </div>
@@ -92,18 +76,10 @@
         selectClass="form-control"
       />
     </div>
-    <!-- <div class="col-12">
-      <label for="" class="mb-2">Course Image</label>
-      <app-file-upload
-        formControlName="files"
-        [multiple]="true"
-        label="Upload certification images"
-      ></app-file-upload>
-    </div> -->
   </div>
 
   <div class="d-flex justify-content-end gap-2">
     <app-button btnLabel="Cancel" [mainBtn]="false" (click)="cancel()" />
-    <app-button btnLabel="Add Certification" buttonType="submit" />
+    <app-button btnLabel="Add Exam" buttonType="submit" />
   </div>
 </form>

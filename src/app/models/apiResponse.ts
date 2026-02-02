@@ -8,7 +8,6 @@ export interface ApiResponse<T> {
 
 
 export interface ApiSearchResponse<T> {
-
   success: boolean,
   message: string,
   data: T[];
